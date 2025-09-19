@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.main{
+		padding:10px;
+		font-size: 15pt;
+	}
+.main a{
+	text-decoration: none;
+}   
+
+.content{
+	width: 600px;
+	margin:0px auto;
+}
+
+.admin_content{
+	width: 1200px;
+	margin:0px auto;
+}
+
+.admin_content .userRole{
+	width:600px;
+}
+
+.admin_content > h1 {
+	margin:0 !important;
+	float:left !important;
+}
+
+#bb {
+	margin-top: 7px !important;
+	margin-left: 20px !important;
+}
+
