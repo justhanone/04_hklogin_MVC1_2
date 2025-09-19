@@ -229,6 +229,33 @@ public class AdminDao extends Database{
 		}
 		return dto;	
 	}
+	
+	//7. 게시판 내용 수정
+	public boolean updateBoard(BoardDto dto) {
+		int count=0;
+		Connection conn=null;
+		PreparedStatement psmt=null;
+		
+		String sql="UPDATE HKBOARD SET CONTENT=? WHERE SEQ=?"; //각 문장이 만나는 시작과 끝은 공백이 한 칸씩 있어야 함
+		//1단계는 맨 위의 생성자에서 한 driver 로딩
+		try {
+			conn=getConnection(); //2단계
+			
+			psmt=conn.prepareStatement(sql); //3단계
+			//0은 seq=NULL
+			psmt.setString(1, dto.getTcontent());
+			psmt.setInt(2, dto.getTseq());
+			
+			count=psmt.executeUpdate(); //4단계
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			close(null, psmt, conn); //rs !=null일때 실행하는거니까 rs=null 넣음으로서 실행 안하기.
+		}
+		return count>0?true:false;
+	}
 }
 
 

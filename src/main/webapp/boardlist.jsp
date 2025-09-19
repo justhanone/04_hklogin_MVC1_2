@@ -40,7 +40,7 @@
 	<div class="admin_content">
 		<h1>관리자 페이지</h1>
 		<button id="bb" type="button" class="btn btn-primary" 
-			onclick="location.href='boardController.jsp?boardupdate?command=boardupdate&Tseq=<%=dtos.getTseq()%>' ">게시글 생성</button>
+			onclick="location.href='boardController.jsp?boardupdate?command=boardinset&Tseq=<%=dtos.getTseq()%>' ">게시글 생성</button>
 			
 		<div class="userlist">
 			<table border="1" class="table  table-striped table-hover">
